@@ -16,10 +16,8 @@
       flavour = "macchiato";
     };
   };
-  plugins.treesitter.enable = true;
 
   plugins = {
-    lsp-format.enable = true;
     lsp = {
       enable = true;
       inlayHints = true;
@@ -34,10 +32,24 @@
       enable = true;
       settings = {
         notify_on_error = true;
+        notify_no_formatters = true;
+        formatters_by_ft = {
+          nix = [
+            "alejandra"
+          ];
+        };
+        format_on_save = {timeout_ms = 500;};
+      };
+    };
+    none-ls = {
+      enable = true;
+      sources.formatting = {
+        alejandra.enable = true;
       };
     };
   };
 
+  plugins.treesitter.enable = true;
   plugins.which-key.enable = true;
-
+  plugins.lualine.enable = true;
 }
