@@ -5,6 +5,13 @@
 }: {
   globals.mapleader = " ";
 
+  keymaps = [
+    {
+      action = "<cmd>Oil<CR>";
+      key = "-";
+    }
+  ];
+
   opts = {
     number = true;
     relativenumber = true;
@@ -54,4 +61,5 @@
   plugins.treesitter.enable = true;
   plugins.which-key.enable = true;
   plugins.lualine.enable = true;
+  plugins.oil.enable = true;
 }
