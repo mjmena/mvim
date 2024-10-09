@@ -1,5 +1,10 @@
 {
+  lib,
+  pkgs,
+  ...
+}: {
   globals.mapleader = " ";
+
   opts = {
     number = true;
     relativenumber = true;
@@ -13,7 +18,7 @@
   colorschemes.catppuccin = {
     enable = true;
     settings = {
-      flavour = "macchiato";
+      flavour = "mocha";
     };
   };
 
@@ -39,12 +44,9 @@
           ];
         };
         format_on_save = {timeout_ms = 500;};
-      };
-    };
-    none-ls = {
-      enable = true;
-      sources.formatting = {
-        alejandra.enable = true;
+        formatters = {
+          alejandra.command = lib.getExe pkgs.alejandra;
+        };
       };
     };
   };
