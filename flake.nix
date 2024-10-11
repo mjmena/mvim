@@ -29,7 +29,7 @@
         nixvim' = nixvim.legacyPackages.${system};
         nixvimModule = {
           inherit pkgs;
-          module = import ./config; # import the module directly
+          module = import ./default.nix; # import the module directly
           # You can use `extraSpecialArgs` to pass additional arguments to your module files
         };
         nvim = nixvim'.makeNixvimWithModule nixvimModule;
