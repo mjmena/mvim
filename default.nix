@@ -75,9 +75,17 @@
       indent.enable = true;
       highlight.enable = true;
     };
+    grammarPackages =
+      pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars
+      ++ [
+        pkgs.tree-sitter-grammars.tree-sitter-nu
+      ];
   };
 
   plugins.which-key.enable = true;
   plugins.lualine.enable = true;
   plugins.oil.enable = true;
+  extraPlugins = [
+    pkgs.tree-sitter-grammars.tree-sitter-nu
+  ];
 }
