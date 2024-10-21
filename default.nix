@@ -44,6 +44,11 @@
         };
       };
     };
+    lsp-lines.enable = true;
+  };
+
+  plugins = {
+    cmp.enable = true;
   };
 
   plugins = {
