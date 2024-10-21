@@ -57,6 +57,8 @@
     ];
   };
 
+  plugins.commentary.enable = true;
+
   plugins = {
     conform-nvim = {
       enable = true;
